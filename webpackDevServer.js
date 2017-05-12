@@ -1,6 +1,6 @@
 const webpack = require("webpack");
 var http = require('http');
-
+var path = require("path");
 const webpackDevServer = require("webpack-dev-server");
 
 const wpdevconfig = require("./config/webpack.dev.config");
@@ -8,9 +8,10 @@ const wpdevconfig = require("./config/webpack.dev.config");
 const compiler = webpack(wpdevconfig);
 
 const server = new webpackDevServer(compiler,{
+    contentBase: path.resolve("./public"),
     publicPath: wpdevconfig.output.publicPath,
     historyApiFallback:true,
-    https:true,
+    https:false,
     hot:true,
     // headers:{"Access-Control-Allow-Origin":"https://localhost:fremderPort"}
 });
