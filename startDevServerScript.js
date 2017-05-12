@@ -7,7 +7,7 @@ const devServerCnf = require("./config/webpack.dev.devserver");
 
 const compiler = webpack(wpdevconfig);
 
-const server = new webpackDevServer(compiler,devServerCnf);
+const server = new webpackDevServer(compiler, devServerCnf);
 
 let port = process.env.PORT || 8080;
 server.listen(port , 'localhost', function(err, result){
@@ -15,6 +15,7 @@ server.listen(port , 'localhost', function(err, result){
         console.log(err);
     }
     
+    console.log("Express app is listening on port " + port + ". Visit it at http://localhost:" + port + " ");
     if(result)
     {
         console.log(result)

@@ -12,7 +12,7 @@ module.exports = {
         path: path.resolve("./public/scripts/"),
 
         //für dev:
-        publicPath: "http://localhost:8080/"
+        publicPath: "http://localhost:8080/"//"http://localhost:8080/"
     },
     resolve: require("./webpack.resolve"),
     module: require("./webpack.rules"),
@@ -20,6 +20,7 @@ module.exports = {
     // devServer:require("./webpack.dev.devserver"),
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
         new webpackNotifierPlugin({alwaysNotify:true}),
     ]
 }

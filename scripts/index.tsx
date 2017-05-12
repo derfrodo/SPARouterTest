@@ -1,24 +1,26 @@
+const { AppContainer } = require("react-hot-loader");
 import * as React from "react";
-import { render as Render } from "react-dom";
+import ReactDOM from "react-dom";
 
+// var App = require("./App");
 import App from "./App";
+
 declare var module: { hot: any };
 
-const {AppContainer} = require("react-hot-loader");
-
-const render = (comp: any) => {
+var rndr = (NextComponent: JSX.Element) => {
     const rootEl = document.getElementById("app");
-
     const domElem = (<AppContainer>
-        {comp}
+        {NextComponent}
     </AppContainer>);
-
-    Render(domElem, rootEl);
+    ReactDOM.render(domElem, rootEl);
+    console.log("X");
 };
 
-
 if (module.hot) {
-    module.hot.accept("./App", () => { render(<App />); });
+    module.hot.accept('./App', () => {
+        console.log("sowas");
+        rndr(<App />)
+    });
 }
 
-render(<App />);
+rndr(<App />);
