@@ -6,8 +6,6 @@ declare var module: { hot: any };
 
 const {AppContainer} = require("react-hot-loader");
 
-
-
 const render = (comp: any) => {
     const rootEl = document.getElementById("app");
 

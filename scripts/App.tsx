@@ -1,7 +1,7 @@
 import * as React from "react";
 
 const App = (props) => {
-    return (<div>Hallo Welt</div>);
+    return (<div>Hallo Wel2t</div>);
 }
 
-export default App; 
+export default App;

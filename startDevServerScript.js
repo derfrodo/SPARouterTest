@@ -1,27 +1,27 @@
 const webpack = require("webpack");
-var http = require('http');
 var path = require("path");
 const webpackDevServer = require("webpack-dev-server");
 
 const wpdevconfig = require("./config/webpack.dev.config");
+const devServerCnf = require("./config/webpack.dev.devserver");
 
 const compiler = webpack(wpdevconfig);
 
-const server = new webpackDevServer(compiler,{
-    contentBase: path.resolve("./public"),
-    publicPath: wpdevconfig.output.publicPath,
-    historyApiFallback:true,
-    https:false,
-    hot:true,
-    // headers:{"Access-Control-Allow-Origin":"https://localhost:fremderPort"}
-});
+const server = new webpackDevServer(compiler,devServerCnf);
 
-let port = process.env.PORT || 8088;
+let port = process.env.PORT || 8080;
 server.listen(port , 'localhost', function(err, result){
     if(err){
         console.log(err);
     }
+    
+    if(result)
+    {
+        console.log(result)
+    }
 })
+
+//var http = require('http');
 
 // const srv = http.createServer(server);
 

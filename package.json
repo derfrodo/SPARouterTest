@@ -8,7 +8,7 @@
     "open": "start http://localhost:3000",
     "start": "node ./server.js",
     "dev": "node ./node_modules/nodemon/bin/nodemon.js --watch server.js ./server.js",
-    "webpackdevserver": "node ./webpackDevServer.js"
+    "webpackdevserver": "node ./startDevServerScript.js"
   },
   "repository": {
     "type": "git",
