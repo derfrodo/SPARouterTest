@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export default class App extends React.Component<{}, { cnt: number }>{
+export class SomeComp extends React.Component<{}, { cnt: number }>{
 
     constructor(props) {
         super(props);
@@ -13,7 +13,7 @@ export default class App extends React.Component<{}, { cnt: number }>{
     public render() {
         return (
             <div>
-                <p>H W 2</p>
+                <WeitereKomponente />
                 <p>{this.state.cnt}</p>
             </div>)
     }
@@ -23,4 +23,10 @@ export default class App extends React.Component<{}, { cnt: number }>{
         setTimeout(this.doSomething, 1000);
     }
 
+
+
+}
+
+const WeitereKomponente = (props) => {
+    return (<div>Test2</div>)
 }

@@ -1,6 +1,5 @@
 const autoprefixer = require("autoprefixer");
 
-
 module.exports = {
     rules: [
         {
@@ -8,8 +7,7 @@ module.exports = {
             use: [
                 { loader: "babel-loader" },
                 {
-                    loader: "ts-loader",
-                    options: {  transpileOnly: true }
+                    loader: "ts-loader"
                 },
                 {
                     loader: "tslint-loader",
@@ -18,7 +16,8 @@ module.exports = {
                         configuration: require("../tslint.json")
                     }
                 }
-            ]
+            ],
+            exclude: /node_modules/
         },
         {
             test: /\.less$/,
