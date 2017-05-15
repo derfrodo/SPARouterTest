@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 
-
 export const Home = (props: RouteComponentProps<any>) => {
     return (<div>
         <div>Zu Hause!</div>
@@ -10,7 +9,6 @@ export const Home = (props: RouteComponentProps<any>) => {
         </div>
     </div>);
 };
-
 
 export const Posts = (props: RouteComponentProps<any>) => {
     return <div><PostList locally={(props.location.state && props.location.state.locally) ? true : false} /></div>;
@@ -47,4 +45,3 @@ export class PostList extends React.Component<IPostListProps, IPostListStatus> {
         </span>);
     }
 }
-
