@@ -6,21 +6,22 @@ export const Home = (props: RouteComponentProps<any>) => {
     return (<div>
         <div>Zu Hause!</div>
         <div>
-            <Link to="/posts">Gehe zu posts</Link>
+            <Link to={{ pathname: "/posts", state: { locally: true } }} >Gehe zu posts</Link>
         </div>
     </div>);
 };
 
 
 export const Posts = (props: RouteComponentProps<any>) => {
-    return <div><PostList /></div>;
+    return <div><PostList locally={(props.location.state && props.location.state.locally) ? true : false} /></div>;
 };
 
 interface IPostListStatus {
     loadingPosts?: boolean;
 }
+
 interface IPostListProps {
-    loadingPosts?: boolean;
+    locally?: boolean;
 }
 
 export class PostList extends React.Component<IPostListProps, IPostListStatus> {
@@ -30,14 +31,13 @@ export class PostList extends React.Component<IPostListProps, IPostListStatus> {
     }
 
     public componentDidMount() {
-
         this.setState({ loadingPosts: true });
         setTimeout(() => this.setState({ loadingPosts: false }), 2000);
     }
 
     public render() {
         return (<span>
-            Test
+            {this.props.locally ? <div>locally</div> : <span></span>}
             {this.state.loadingPosts ?
                 (<div>Lade Posts...</div>) :
                 (<div>Posts</div>)}
