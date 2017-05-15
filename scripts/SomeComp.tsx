@@ -1,11 +1,10 @@
 import * as React from "react";
 
-export class SomeComp extends React.Component<{}, { cnt: number }>{
-
+export class SomeComp extends React.Component<{}, { cnt: number }> {
     constructor(props) {
         super(props);
-        this.state = { cnt: 0 }
-        this.doSomething = this.doSomething.bind(this)
+        this.state = { cnt: 0 };
+        this.doSomething = this.doSomething.bind(this);
 
         setTimeout(this.doSomething, 1000);
     }
@@ -15,18 +14,16 @@ export class SomeComp extends React.Component<{}, { cnt: number }>{
             <div>
                 <WeitereKomponente />
                 <p>{this.state.cnt}</p>
-            </div>)
+            </div>);
     }
 
     private doSomething() {
-        this.setState({ cnt: this.state.cnt + 1 })
+        this.setState({ cnt: this.state.cnt + 1 });
         setTimeout(this.doSomething, 1000);
     }
-
-
 
 }
 
 const WeitereKomponente = (props) => {
-    return (<div>Test2</div>)
-}
+    return (<div>Test 2</div>);
+};
