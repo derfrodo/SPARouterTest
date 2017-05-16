@@ -8,7 +8,7 @@ export const App = (props) => {
             <div>
                 <h1>Wir sind eine Anwendung</h1>
                 <Route exact path="/" component={Home} />
-                <Route  path="/Posts" component={Posts} />
+                <Route path="/Posts" component={Posts} />
             </div>
         </BrowserRouter>);
 };
