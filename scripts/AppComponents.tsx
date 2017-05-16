@@ -16,6 +16,7 @@ export const Posts = (props: RouteComponentProps<any>) => {
 
 interface IPostListStatus {
     loadingPosts?: boolean;
+    cnt?: number;
 }
 
 interface IPostListProps {
@@ -41,6 +42,12 @@ export class PostList extends React.Component<IPostListProps, IPostListStatus> {
                 (<div>Posts</div>)}
             <div>
                 <Link to="/">Gehe nach hause</Link>
+                <br />
+                
+                <a href="javascript:void(0);"
+                    onClick={() => this.setState({ cnt: (this.state.cnt ? this.state.cnt + 1 : 1) })}>
+                    {(this.state.cnt ? this.state.cnt : 0)}
+                </a>
             </div>
         </span>);
     }
