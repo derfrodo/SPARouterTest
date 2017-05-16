@@ -2,7 +2,7 @@ import * as React from "react";
 import { render } from "react-dom";
 import { AppContainer } from "react-hot-loader";
 
-import { Posts } from "./AppComponents";
+import { Posts } from "../app2Comps/AppComponents";
 
 declare var module: { hot: any };
 
@@ -15,7 +15,7 @@ const rndr = (NextComponent: JSX.Element) => {
 };
 
 if (module.hot) {
-    module.hot.accept("./AppComponents", () => {
+    module.hot.accept("../app2Comps/AppComponents", () => {
         rndr(<Posts />);
     });
 }

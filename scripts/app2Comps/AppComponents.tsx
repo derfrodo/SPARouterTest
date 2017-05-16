@@ -26,7 +26,6 @@ export class PostList extends React.Component<IPostListProps, IPostListStatus> {
 
     public render() {
         return (<span>
-            Liste :&nbsp;
                 <a href="javascript:void(0);"
                     onClick={() => this.setState({ cnt: (this.state.cnt ? this.state.cnt + 1 : 1) })}>
                     {(this.state.cnt ? this.state.cnt : 0)}
